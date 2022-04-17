@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# options to be displyed
+option0=" Logout"
+option1="⏾ Suspend"
+option2=" Reboot"
+option3=" Shutdown"
+
+# Variable passed to rofi
+options="$option0\n$option1\n$option2\n$option3"
+
+selected="$(echo -e "$options" | rofi -lines 13 -dmenu -p "WARNING: unsaved changes will be lost")"
+case $selected in
+    $option0)
+        pkill dwm;;
+    $option1)
+        loginctl suspend;;
+    $option2)
+        loginctl reboot;;
+    $option3)
+        loginctl poweroff;;
+esac
