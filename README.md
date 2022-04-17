@@ -57,11 +57,11 @@ Using ```startx``` or ```sx```
 
 if you use startx
 ```
-cp ~/.config/slnxwm/.xinitrc ~/
+cp ~/.config/slnxwm/extra/.xinitrc ~/
 ```
 if you use sx
 ```
-cp ~/.config/slnxwm/.xinitrc ~/.config/sx/sxrc
+cp ~/.config/slnxwm/extra/.xinitrc ~/.config/sx/sxrc
 ```
 - the prepared file has ```exec ~/.config/slnxwm/scripts/./autostart``` inside
 
