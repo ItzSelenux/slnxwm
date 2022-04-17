@@ -11,7 +11,8 @@ Selenux's Custom DWM
 - imlib2 
 - xsetroot package ( show clock or other info on bar)
 
-## Optional
+## Optional Requirements
+
 - Rofi (Programs Laucher and Logout Menu)
 - NerdFonts (by default, SlnxWM has symbols on Workspaces and Layouts)
    - i use https://github.com/ryanoasis/nerd-fonts
@@ -23,23 +24,32 @@ Selenux's Custom DWM
 # Setup 
 
 ```git clone https://github.com/ItzSelenux/slnxwm --depth 1```
+
 ```mv slnxwm ~/.config```
+
 ```cd ~/.config/slnxwm```
 
 - SlnxWM has a simple compilation script, you can also use it to recompile
+
 ```./remake```
 
-- remake has ```rm config.h``` and ```su -c "make install"``` inside
+remake has ```rm config.h``` and ```su -c "make install"``` inside
 
-- to apply nerdfonts, download it, and put it on ~/.local/share/fonts 
+# Extra Setup
+
+- to apply nerdfonts, download it, and put it on ```~/.local/share/fonts```
 
 - if you want my Rofi theme or Picom config, you can copy it
-  - Rofi Theme:
+ 
+ Rofi Theme:
+  
 ```cp /extra/MintMenu-Green-Dark ~/.local/share/rofi/themes```
-  - Picom Config
+  
+ Picom Config
+  
 ```cp /extra/picom.conf ~/.config/```
 
-- autostart script in the scripts dir is just an example one so it must be adjusted for your liking!
+- if you want to change autostart, open ```scripts/autostart```
 
 # Run SlnxWM
 Using ```startx``` or ```sx```
@@ -57,7 +67,9 @@ cp ~/.config/slnxwm/.xinitrc ~/.config/sx/sxrc
 
 # Recompile 
 - You need to recompile dwm after every change you make in its src code 
+
 ```cd ~/.config/slnxwm/slnxwm```
+
 ```./remake```
 - remake  is a script that do ```rm config.h ``` and ```su -c "make install"```
 
@@ -65,7 +77,7 @@ cp ~/.config/slnxwm/.xinitrc ~/.config/sx/sxrc
 - functionalgaps
 - systray
 
-- you can view patches on ```patches folder```
+you can view patches on ```patches``` folder
 
 # DWM 
 -SlnxWM is a fork of [DWM](https://dwm.suckless.org). 
