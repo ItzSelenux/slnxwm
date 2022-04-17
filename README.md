@@ -1,0 +1,2 @@
+# slnxwm
+Custom DWM
