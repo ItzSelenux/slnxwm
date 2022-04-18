@@ -12,6 +12,6 @@ static const char c_fg_pink[]       = "#b85f90";
 static const char c_fg_purple[]     = "#866cba"; 
 static const char c_fg_red[]        = "#b35a57"; 
 static const char c_fg_sand[]       = "#b89f65";
-static const char c_fg_sand[]       = "#579c8e";
+static const char c_fg_Teal[]       = "#579c8e";
 
 
