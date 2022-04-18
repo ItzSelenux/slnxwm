@@ -18,21 +18,19 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = { "noto:size=11" };
 static const char dmenufont[]       = "monospace:size=10";
-
-/* Theme */
-#include "themes/Mint-Green.h"
-
-
+static const char col_text[]       = "#dadada";
+static const char col_gray2[]       = "#2f2f2f";
+static const char col_gray3[]       = "#2f2f2f";
+static const char col_gray4[]       = "#2f2f2f";
+static const char col_accent[]      = "#8fa876";
 static const char *colors[][3]      = {
 
 	/*               fg         bg         border   */
-	[SchemeNorm] = { c_txt, c_bg, c_bg },
-	[SchemeSel]  = { c_stxt, c_fg,  c_bg  },
-	[SchemeTitle]  = { c_txt, c_bg,  c_bg  },
+	[SchemeNorm] = { col_text, col_gray2, col_gray2 },
+	[SchemeSel]  = { col_text, col_accent,  col_gray2  },
 };
 
 /* tagging */
-
 static const char *tags[] = { "" , "" };
 
 static const Rule rules[] = {
