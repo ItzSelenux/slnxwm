@@ -1,4 +1,5 @@
 /* See LICENSE file for copyright and license details. */
+#include <X11/XF86keysym.h>
 
 /* Gaps */
 static const int startwithgaps	     = 1;	 /* 1 means gaps are used by default */
@@ -20,14 +21,14 @@ static const char *fonts[]          = { "noto:size=11" };
 static const char dmenufont[]       = "monospace:size=10";
 
 /* Theme */
-#include "themes/Mint-Green.h"
+#include "themes/mint.h"
 
 
 static const char *colors[][3]      = {
 
 	/*               fg         bg         border   */
 	[SchemeNorm] = { c_txt, c_bg, c_bg },
-	[SchemeSel]  = { c_stxt, c_fg,  c_bg  },
+	[SchemeSel]  = { c_stxt, c_fg_green,  c_bg  },
 	[SchemeTitle]  = { c_txt, c_bg,  c_bg  },
 };
 
@@ -76,6 +77,9 @@ static const char *console[]  = {  "sakura", NULL };
 static const char *xkill[]  = {  "xkill", NULL };
 static const char *print [] =  { "mate-screenshot", "-i", NULL };
 static const char *rofi[] = {"rofi", "-show", "drun", NULL };
+static const char *volup[] = {"pamixer", "-i", "5", NULL };
+static const char *voldown[] = {"pamixer", "-d", "5", NULL };
+static const char *volmute[] = {"pamixer", "-t", NULL };
 static const char *logout[] = {".config/slnxwm/scripts/logout", NULL };
 
 
@@ -84,7 +88,10 @@ static Key keys[] = {
     { MODKEY,                       XK_space,    spawn,          {.v = rofi } },
     { MODKEY,                       XK_e,        spawn,          {.v = explorer } },
     { MODKEY,                       XK_t,        spawn,          {.v = console } },
-    { ControlMask,                  XK_Print,    spawn,          {.v = print } },
+    { None,          XF86XK_AudioRaiseVolume,    spawn,          {.v = volup } },
+    { None,          XF86XK_AudioLowerVolume,    spawn,          {.v = voldown } },
+    { None,                  XF86XK_AudioMute,    spawn,          {.v = volmute } },
+    { None,                 XK_Print,            spawn,          {.v = print } },
     { MODKEY|ControlMask,           XK_x,        spawn,          {.v = xkill } },
     { MODKEY,                       XK_b,        togglebar,      {0} },
 	{ ShiftMask,                    XK_Tab,      focusstack,     {.i = +1 } },
