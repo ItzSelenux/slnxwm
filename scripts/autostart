@@ -3,18 +3,17 @@
 
 # this is just an example!
 # add your autostart stuffs here
-picom &
-#selekey & # its a script because a bug, selekey = setxkbmap us -variant altgr-intl 
+picom & 
 xrdb merge ~/.Xresources &
 feh --bg-fill ~/.config/slnxwm/bg/wallpaper.png &
-################## Statusbar loop
+################## Statusbar
 while true; do
    xsetroot -name "$( date +"%I:%M %p" ) "
 
 #Bar with Nerd Information  
 #xsetroot -name "墳: $(pamixer --get-volume-human)   : $(free -h --kilo | awk '/^Mem:/ {print $3 "/" $2}')   : $(sensors|grep 'Core 0'|awk '{print $3}' )   : $( date +"%I:%M %p" ) "
-   sleep 1    # Update time every minute
+   sleep 1    # Update every second
 done &
 ################################3
-# run bar script and dwm ( do not remove this )
+# run dwm ( do not remove this )
 dwm
