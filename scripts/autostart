@@ -8,7 +8,7 @@ xrdb merge ~/.Xresources &
 feh --bg-fill ~/.config/slnxwm/bg/wallpaper.png &
 ################## Statusbar
 while true; do
-   xsetroot -name "$( date +"%I:%M %p" ) "
+   xsetroot -name "墳: $(pamixer --get-volume-human)   $( date +"%I:%M %p" ) "
 
 #Bar with Nerd Information  
 #xsetroot -name "墳: $(pamixer --get-volume-human)   : $(free -h --kilo | awk '/^Mem:/ {print $3 "/" $2}')   : $(sensors|grep 'Core 0'|awk '{print $3}' )   : $( date +"%I:%M %p" ) "
