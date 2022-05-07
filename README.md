@@ -76,7 +76,8 @@ cp ~/.config/slnxwm/extra/.xinitrc ~/.config/sx/sxrc
 # Patches
 - functionalgaps
 - systray
-
+- pertag
+- titlecolor
 you can view patches on ```patches``` folder
 
 # DWM 
