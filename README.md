@@ -78,6 +78,7 @@ cp ~/.config/slnxwm/extra/.xinitrc ~/.config/sx/sxrc
 - systray
 - pertag
 - titlecolor
+
 you can view patches on ```patches``` folder
 
 # DWM 
