@@ -1,3 +1,5 @@
+
+/* Layout by J O N A T H A N  P. https://github.com/IamJony */
 /* theme by ItzSelenux based on Mint-Y https://github.com/ItzSelenux */
 
 configuration {
@@ -12,8 +14,8 @@ configuration {
 }
 
 * {
-  al:   #383838;
-  bg:   #2b2b2b;
+  al:   #2f2f2f;
+  bg:   #2a2a2a;
   fg:   #ffffff;
   se:	#8fa876;
 }
@@ -52,8 +54,8 @@ inputbar {
     background-color:               @bg;
     text-color: 					@fg;
     expand:                         false;
-	border:							0px 0px 3px 0px;
-    border-radius:                  4px;
+	border:							0px 0px 0px 0px;
+    border-radius:                  0px;
 	border-color:					@ac;
     margin:                         0px;
     padding:                        10px;
@@ -114,16 +116,16 @@ element-text {
 element selected {
     background-color:               @se;
     text-color:                     #000000;
-	border:							0px 0px 3px 0px;
-    border-radius:                  4px;
+	border:							0px 0px 0px 0px;
+    border-radius:                  6px;
     border-color:                  	@se;
 
 }
 element-icon selected {
     background-color:               @se;
     text-color:                     #000000;
-	border:							0px 0px 3px 0px;
-    border-radius:                  4px;
+	border:							0px 0px 0px 0px;
+    border-radius:                  0px;
     border-color:                  	@se;
 
 }
