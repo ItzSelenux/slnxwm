@@ -18,7 +18,7 @@ Selenux's Custom DWM
    - i use https://github.com/ryanoasis/nerd-fonts
 - Feh (Wallpaper)
 - Picom (Window Compositor and Effects)
-- kdocker (Send to tray, to minimize or send to other workspace)
+- KDocker (Send to tray, to minimize or send to other workspace)
 - Desire to use DWM
 
 
