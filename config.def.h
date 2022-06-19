@@ -81,6 +81,8 @@ static const char *volup[] = {"pamixer", "-i", "5", NULL };
 static const char *voldown[] = {"pamixer", "-d", "5", NULL };
 static const char *volmute[] = {"pamixer", "-t", NULL };
 static const char *logout[] = {".config/slnxwm/scripts/logout", NULL };
+static const char *kdocker[] = {"kdocker", NULL };
+
 
 
 static Key keys[] = {
@@ -88,6 +90,7 @@ static Key keys[] = {
     { MODKEY,                       XK_space,    spawn,          {.v = rofi } },
     { MODKEY,                       XK_e,        spawn,          {.v = explorer } },
     { MODKEY,                       XK_t,        spawn,          {.v = console } },
+    { MODKEY,                       XK_k,        spawn,          {.v = kdocker } },
     { None,          XF86XK_AudioRaiseVolume,    spawn,          {.v = volup } },
     { None,          XF86XK_AudioLowerVolume,    spawn,          {.v = voldown } },
     { None,                  XF86XK_AudioMute,    spawn,          {.v = volmute } },
