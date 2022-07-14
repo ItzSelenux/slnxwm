@@ -28,7 +28,7 @@ Selenux's Custom DWM
 
 ```mv slnxwm ~/.config```
 
-```cd ~/.config/slnxwm```
+```cd ~/.local/share/slnxwm```
 
 - SlnxWM has a simple compilation script, you can also use it to recompile
 
@@ -58,18 +58,18 @@ Using ```startx``` or ```sx```
 
 if you use startx
 ```
-cp ~/.config/slnxwm/extra/.xinitrc ~/
+cp ~/.local/share/slnxwm/extra/.xinitrc ~/
 ```
 if you use sx
 ```
-cp ~/.config/slnxwm/extra/.xinitrc ~/.config/sx/sxrc
+cp ~/.local/share/slnxwm/extra/.xinitrc ~/.config/sx/sxrc
 ```
-- the prepared file has ```exec ~/.config/slnxwm/scripts/./autostart``` inside
+- the prepared file has ```exec ~/.local/share/slnxwm/scripts/./autostart``` inside
 
 # Recompile 
 - You need to recompile dwm after every change you make in its src code 
 
-```cd ~/.config/slnxwm/slnxwm```
+```cd ~/.local/share/slnxwm/```
 
 ```./remake```
 - remake  is a script that do ```rm config.h ``` and ```su -c "make install"```

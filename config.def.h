@@ -80,7 +80,7 @@ static const char *rofi[] = {"rofi", "-show", "drun", NULL };
 static const char *volup[] = {"pamixer", "-i", "5", NULL };
 static const char *voldown[] = {"pamixer", "-d", "5", NULL };
 static const char *volmute[] = {"pamixer", "-t", NULL };
-static const char *logout[] = {".config/slnxwm/scripts/logout", NULL };
+static const char *logout[] = {".local/share/slnxwm/scripts/logout", NULL };
 static const char *kdocker[] = {"kdocker", NULL };
 
 
