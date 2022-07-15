@@ -5,7 +5,7 @@
 # add your autostart stuffs here
 picom & 
 xrdb merge ~/.Xresources &
-feh --bg-fill ~/.local/share/slnxwm/bg/wallpaper.png &
+feh --bg-fill ~/.local/share/slnxwm/extra/wallpaper.png &
 ################## Statusbar
 while true; do
    xsetroot -name "墳: $(pamixer --get-volume-human)   : $( date +"%I:%M %p" ) "
