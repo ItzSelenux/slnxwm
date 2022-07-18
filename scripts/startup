@@ -11,7 +11,9 @@ while true; do
    xsetroot -name "墳: $(pamixer --get-volume-human)   : $( date +"%I:%M %p" ) "
 
 #Bar with Nerd Information  
-#xsetroot -name "墳: $(pamixer --get-volume-human)   : $(free -h --kilo | awk '/^Mem:/ {print $3 "/" $2}')   : $(sensors|grep 'Core 0'|awk '{print $3}' )   : $( date +"%I:%M %p" ) "
+# "| :  $(pacmd list-sink-inputs | grep -oP '(?<=media.artist = ).*') - $(pacmd list-sink-inputs | grep -oP '(?<=media.title = ).*') | 墳: $(pamixer --get-volume-human) | : $(free -h --kilo | awk '/^Mem:/ {print $3 "/" $2}') |: $(sensors|grep 'Core 0'|awk '{print $3}' ) | : $( date +"%I:%M %p" ) "
+
+
    sleep 1    # Update every second
 done &
 ################################3
