@@ -9,7 +9,7 @@ option3=" Shutdown"
 # Variable passed to rofi
 options="$option0\n$option1\n$option2\n$option3"
 
-selected="$(echo -e "$options" | rofi -theme-str "listview{ lines: 2;}"  -dmenu -p "WARNING: unsaved changes will be lost")"
+selected="$(echo -e "$options" | rofi -theme-str  "inputbar{ children: [prompt];} listview{ lines: 2;}"  -dmenu -p "WARNING: unsaved changes will be lost")"
 case $selected in
     $option0)
         loginctl terminate-user $USER;;
