@@ -12,7 +12,7 @@ options="$option0\n$option1\n$option2\n$option3"
 selected="$(echo -e "$options" | rofi -theme-str "listview{ lines: 2;}"  -dmenu -p "WARNING: unsaved changes will be lost")"
 case $selected in
     $option0)
-        pkill dwm;;
+        loginctl terminate-user $USER;;
     $option1)
         loginctl suspend;;
     $option2)
