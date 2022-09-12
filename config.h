@@ -72,12 +72,12 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *explorer[]  = {  ".local/share/slnxw/scripts/selexecute", "-f", NULL };
-static const char *console[]  = {  ".local/share/slnxw/scripts/selexecute", "-t", NULL };
-static const char *web[]  = {  ".local/share/slnxw/scripts/selexecute", "-w", NULL };
-static const char *music[]  = {  ".local/share/slnxw/scripts/selexecute", "-m", NULL };
+static const char *explorer[]  = {  ".local/share/slnxw/scripts/selexecute", "-f" NULL };
+static const char *console[]  = {  ".local/share/slnxw/scripts/selexecute", "-t" NULL };
+static const char *web[]  = {  ".local/share/slnxw/scripts/selexecute", "-w" NULL };
+static const char *music[]  = {  ".local/share/slnxw/scripts/selexecute", "-m" NULL };
 static const char *xkill[]  = {  "xkill", NULL };
-static const char *print [] =  {  ".local/share/slnxw/scripts/selexecute", "-s", NULL };
+static const char *print [] =  {  ".local/share/slnxw/scripts/selexecute", "-s" NULL };
 static const char *rofi[] = {"rofi", "-show", "drun", NULL };
 static const char *volup[] = {"pamixer", "-i", "5", NULL };
 static const char *voldown[] = {"pamixer", "-d", "5", NULL };
