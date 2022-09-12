@@ -7,7 +7,7 @@ then
     printf "~/.config/selexecute detected \n"
 else
     printf "WARNING: Config file (~/.config/selexecute.conf) not detected, creating default config file... \n"
-    printf 'e="xed" \n f="nemo" \n l="rofi -show drun" \n s="flameshot gui" \n t="sakura"\n w="vivaldi-stable"\n' > .config/selexecute.conf
+    printf 'e="xed" \n f="nemo" \n l="rofi -show drun"  f="strawberry" \n \n s="flameshot gui" \n t="sakura"\n w="vivaldi-stable"\n' > .config/selexecute.conf
 fi
 
 source ~/.config/selexecute.conf
