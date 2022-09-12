@@ -26,7 +26,7 @@ Selenux's Custom DWM
 
 ```git clone https://github.com/ItzSelenux/slnxwm --depth 1```
 
-```mv slnxwm ~/.config```
+```mv slnxwm ~/.local/share/```
 
 ```cd ~/.local/share/slnxwm```
 

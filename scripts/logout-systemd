@@ -12,11 +12,11 @@ options="$option0\n$option1\n$option2\n$option3"
 selected="$(echo -e "$options" | rofi -theme-str  "inputbar{ children: [prompt];} listview{ lines: 2;}"  -dmenu -p "WARNING: unsaved changes will be lost")"
 case $selected in
     $option0)
-        loginctl terminate-user $USER;;
+        systemctl terminate-user $USER;;
     $option1)
-        loginctl suspend;;
+        systemctl suspend;;
     $option2)
-        loginctl reboot;;
+        systemctl reboot;;
     $option3)
-        loginctl poweroff;;
+        systemctl poweroff;;
 esac
