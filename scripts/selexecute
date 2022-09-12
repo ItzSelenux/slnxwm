@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cd ~/
 
@@ -13,7 +13,7 @@ fi
 source ~/.config/selexecute.conf
 help()
 {
-   echo -e "selexecute is a program that execute some commands according to you ~/.config/selexecute.conf
+   printf "selexecute is a program that execute some commands according to you ~/.config/selexecute.conf
 
 Options: 
     editor
