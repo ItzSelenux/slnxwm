@@ -72,12 +72,13 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *explorer[]  = {  ".local/share/slnxw/scripts/selexecute", "-f", NULL };
-static const char *console[]  = {  ".local/share/slnxw/scripts/selexecute", "-t", NULL };
-static const char *web[]  = {  ".local/share/slnxw/scripts/selexecute", "-w", NULL };
-static const char *music[]  = {  ".local/share/slnxw/scripts/selexecute", "-m", NULL };
+static const char *explorer[]  = {  ".local/share/slnxwm/scripts/selexecute", "-f", NULL };
+static const char *editor[]  = {  ".local/share/slnxwm/scripts/selexecute", "-e", NULL };
+static const char *console[]  = {  ".local/share/slnxwm/scripts/selexecute", "-t", NULL };
+static const char *web[]  = {  ".local/share/slnxwm/scripts/selexecute", "-w", NULL };
+static const char *music[]  = {  ".local/share/slnxwm/scripts/selexecute", "-m", NULL };
 static const char *xkill[]  = {  "xkill", NULL };
-static const char *print [] =  {  ".local/share/slnxw/scripts/selexecute", "-s", NULL };
+static const char *print [] =  {  "~.local/share/slnxw/scripts/selexecute", "-s", NULL };
 static const char *rofi[] = {"rofi", "-show", "drun", NULL };
 static const char *volup[] = {"pamixer", "-i", "5", NULL };
 static const char *voldown[] = {"pamixer", "-d", "5", NULL };
@@ -90,6 +91,7 @@ static const char *kdocker[] = {"kdocker", NULL };
 static Key keys[] = {
     /* modifier                         key      function        argument */
     { MODKEY,                       XK_space,    spawn,          {.v = rofi } },
+    { MODKEY,                       XK_c,    spawn,          {.v = editor } },
     { MODKEY,                       XK_e,        spawn,          {.v = explorer } },
     { MODKEY,                       XK_t,        spawn,          {.v = console } },
     { MODKEY,                       XK_w,        spawn,          {.v = web } },

@@ -1,28 +1,24 @@
 #!/bin/sh
-
+cd ~/
  /lib/mate-polkit/polkit-mate-authentication-agent-1 &
 picom & 
-<<<<<<< HEAD
 feh --bg-fill ~/.local/share/slnxwm/bg/wallpaper.png &&
 xrandr --output VGA-1 --mode 1440x900 --rate 75  &&
 devmon &
-=======
 xrdb merge ~/.Xresources &
 feh --bg-fill ~/.local/share/slnxwm/extra/wallpaper.png &
->>>>>>> 3b13ee31201662e209051368041c3a257044e7a5
+
 ################## Statusbar
 while true; do
   # xsetroot -name "墳: $(pamixer --get-volume-human)   : $( date +"%I:%M %p" ) "
 
 #Bar with Nerd Information  
-<<<<<<< HEAD
+
 xsetroot -name "| :  $(pacmd list-sink-inputs | grep -oP '(?<=media.artist = ).*') - $(pacmd list-sink-inputs | grep -oP '(?<=media.title = ).*') | 墳: $(pamixer --get-volume-human) | : $(free -h --kilo | awk '/^Mem:/ {print $3 "/" $2}') | : $( date +"%I:%M %p" ) "
-=======
+
 # "| :  $(pacmd list-sink-inputs | grep -oP '(?<=media.artist = ).*') - $(pacmd list-sink-inputs | grep -oP '(?<=media.title = ).*') | 墳: $(pamixer --get-volume-human) | : $(free -h --kilo | awk '/^Mem:/ {print $3 "/" $2}') |: $(sensors|grep 'Core 0'|awk '{print $3}' ) | : $( date +"%I:%M %p" ) "
 
-
->>>>>>> 3b13ee31201662e209051368041c3a257044e7a5
-   sleep 1    # Update every second
+   sleep 2    # Update every second
 done &
 
 ################################3
