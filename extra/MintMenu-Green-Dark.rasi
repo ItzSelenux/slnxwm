@@ -10,6 +10,7 @@ configuration {
     fullscreen:                     false;
 	hide-scrollbar: 				false;
 	sidebar-mode: 					true;
+font:																"comfortaa bold 11";
 	
 }
 

@@ -1,19 +1,19 @@
-
 #!/bin/sh
 
-# this is just an example!
-# add your autostart stuffs here
+ /lib/mate-polkit/polkit-mate-authentication-agent-1 &
 picom & 
-xrdb merge ~/.Xresources &
-feh --bg-fill ~/.local/share/slnxwm/bg/wallpaper.png &
+feh --bg-fill ~/.local/share/slnxwm/bg/wallpaper.png &&
+xrandr --output VGA-1 --mode 1440x900 --rate 75  &&
+devmon &
 ################## Statusbar
 while true; do
-   xsetroot -name "墳: $(pamixer --get-volume-human)   : $( date +"%I:%M %p" ) "
+  # xsetroot -name "墳: $(pamixer --get-volume-human)   : $( date +"%I:%M %p" ) "
 
 #Bar with Nerd Information  
-#xsetroot -name "墳: $(pamixer --get-volume-human)   : $(free -h --kilo | awk '/^Mem:/ {print $3 "/" $2}')   : $(sensors|grep 'Core 0'|awk '{print $3}' )   : $( date +"%I:%M %p" ) "
+xsetroot -name "| :  $(pacmd list-sink-inputs | grep -oP '(?<=media.artist = ).*') - $(pacmd list-sink-inputs | grep -oP '(?<=media.title = ).*') | 墳: $(pamixer --get-volume-human) | : $(free -h --kilo | awk '/^Mem:/ {print $3 "/" $2}') | : $( date +"%I:%M %p" ) "
    sleep 1    # Update every second
 done &
+
 ################################3
 # run dwm ( do not remove this )
 dwm

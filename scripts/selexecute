@@ -1,0 +1,105 @@
+#!/bin/bash
+
+cd ~/
+
+if [ -f ".config/selexecute.conf" ]; 
+then
+    printf "~/.config/selexecute detected \n"
+else
+    printf "WARNING: Config file (~/.config/selexecute.conf) not detected, creating default config file... \n"
+    printf 't="sakura" \n f="nemo" \n w="vivaldi-stable" \n m="rofi -show drun" \n s="flameshot gui"\n' > .config/selexecute.conf
+fi
+
+source ~/.config/selexecute.conf
+help()
+{
+   echo -e "selexecute is a program that execute some commands according to you ~/.config/selexecute.conf
+
+Options: 
+    files
+    -f  Open file manager
+
+    launcher
+    -l  Open applications launcher
+
+    music
+    -m  Open applications menu
+
+    screenshot
+    -s  Open screenshooter
+
+    terminal
+    -t  Open a terminal emulator
+
+    web
+    -w  Open web browser
+"
+}
+
+files()
+{
+$f
+}
+launcher()
+{ 
+$l
+}
+music()
+{ 
+$m
+}
+screenshot()
+{ 
+$s
+}
+terminal()
+{ 
+$t
+}
+web()
+{ 
+$w 
+}
+
+case "${1}" in
+   files)
+      files;;
+   launcher)
+      launcher;;
+   music)
+      music;;
+   screenshot)
+      screenshot;;
+   terminal)
+      terminal;;
+   web)
+      web;;
+   help)
+      help;;
+esac
+
+while getopts ":flmstwh" option; do
+   case $option in
+      f) 
+         files
+         exit;;
+      l)
+         launcher
+         exit;;
+      m)
+         music
+         exit;;
+      s)
+         screenshot
+         exit;;
+      t)
+         terminal
+         exit;;
+
+      w)
+         web
+         exit;;
+      h)
+         help
+         exit;;
+esac done
