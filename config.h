@@ -17,25 +17,30 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "noto:size=11" };
+static const char *fonts[]          = { "noto:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 
 /* Theme */
 #include "themes/mint.h"
 
+static const char col_gray1[]       = "#222222";
+static const char col_gray2[]       = "#444444";
+static const char col_gray3[]       = "#bbbbbb";
+static const char col_gray4[]       = "#eeeeee";
+static const char col_cyan[]        = "#005577";
+
 
 static const char *colors[][3]      = {
 
 	/*               fg         bg         border   */
-	[SchemeNorm] = { c_txt, c_bg, c_bg },
-	[SchemeSel]  = { c_stxt, c_fg_green,  c_bg  },
-	[SchemeTitle]  = { c_txt, c_bg,  c_bg  },
+	[SchemeNorm] = { txt, bg, bg },
+	[SchemeSel]  = { txt, green,  bg  },
+/*                  fg   bg   hidden_fg   */
+	[SchemeHid]  = {  col_cyan,  col_gray1, col_cyan  },
 };
 
 /* tagging */
-
 static const char *tags[] = { "" , "", "" };
-
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
@@ -47,7 +52,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.60; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
@@ -63,10 +68,10 @@ static const Layout layouts[] = {
 /* key definitions */
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
-    { MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-    { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-    { MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-    { MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -103,8 +108,13 @@ static Key keys[] = {
     { None,                 XK_Print,            spawn,          {.v = print } },
     { MODKEY|ControlMask,           XK_x,        spawn,          {.v = xkill } },
     { MODKEY,                       XK_b,        togglebar,      {0} },
-	{ ShiftMask,                    XK_Tab,      focusstack,     {.i = +1 } },
-	{ ShiftMask|ControlMask,       XK_Tab,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_j,      focusstackvis,  {.i = +1 } },
+	{ MODKEY,                       XK_k,      focusstackvis,  {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_j,      focusstackhid,  {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,      focusstackhid,  {.i = -1 } },
+	{ MODKEY,                       XK_s,      show,           {0} },
+	{ MODKEY|ShiftMask,             XK_s,      showall,        {0} },
+	{ MODKEY,                       XK_h,      hide,           {0} },
 	{ MODKEY,                       XK_i,        incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,        incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_Left,     setmfact,       {.f = -0.05} },
@@ -148,6 +158,7 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = console } },
+	{ ClkWinTitle,          0,              Button1,        togglewin,      {0} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },

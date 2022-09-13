@@ -106,7 +106,6 @@ while getopts ":eflmstwh" option; do
       t)
          terminal
          exit;;
-
       w)
          web
          exit;;
