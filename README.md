@@ -78,7 +78,7 @@ cp ~/.local/share/slnxwm/extra/.xinitrc ~/.config/sx/sxrc
 - functionalgaps
 - systray
 - pertag
-- titlecolor
+- awesomebar
 
 you can view patches on ```patches``` folder
 
