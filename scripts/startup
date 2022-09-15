@@ -2,8 +2,6 @@
 cd ~/
  /lib/mate-polkit/polkit-mate-authentication-agent-1 &
 picom & 
-feh --bg-fill ~/.local/share/slnxwm/bg/wallpaper.png &&
-xrandr --output VGA-1 --mode 1440x900 --rate 75  &&
 devmon &
 xrdb merge ~/.Xresources &
 feh --bg-fill ~/.local/share/slnxwm/extra/wallpaper.png &

@@ -30,18 +30,18 @@ static const char *colors[][3]      = {
 	[SchemeNorm] = { txt, bg, bg },
 	[SchemeSel]  = { txt, green,  bg  },
 /*                  fg   bg   hidden_fg   */
-	[SchemeHid]  = { green, bg,  htxt },
+	[SchemeHid]  = { txt, bg,  htxt},
 };
 
 /* tagging */
-static const char *tags[] = { "" , "", "" };
+ static const char *tags[] = { "" , "", "" }; 
+/* static const char *tags[] = { "" };*/
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
@@ -61,6 +61,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask
+#define AltMask Mod2Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -77,7 +78,7 @@ static const char *console[]  = {  ".local/share/slnxwm/scripts/selexecute", "-t
 static const char *web[]  = {  ".local/share/slnxwm/scripts/selexecute", "-w", NULL };
 static const char *music[]  = {  ".local/share/slnxwm/scripts/selexecute", "-m", NULL };
 static const char *xkill[]  = {  "xkill", NULL };
-static const char *print [] =  {  "~.local/share/slnxwm/scripts/selexecute", "-s", NULL };
+static const char *print [] =  {  ".local/share/slnxwm/scripts/selexecute", "-s", NULL };
 static const char *rofi[] = {"rofi", "-show", "drun", NULL };
 static const char *volup[] = {"pamixer", "-i", "5", NULL };
 static const char *voldown[] = {"pamixer", "-d", "5", NULL };
@@ -102,19 +103,19 @@ static Key keys[] = {
     { None,                 XK_Print,            spawn,          {.v = print } },
     { MODKEY|ControlMask,           XK_x,        spawn,          {.v = xkill } },
     { MODKEY,                       XK_b,        togglebar,      {0} },
-	{ MODKEY,                       XK_j,      focusstackvis,  {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstackvis,  {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_j,      focusstackhid,  {.i = +1 } },
+	{ ShiftMask,                    XK_Tab,      focusstackvis,  {.i = +1 } },
+	{ MODKEY,                       XK_j,      focusstackvis,  {.i = -1 } },
+	{ MODKEY,                    XK_Tab,      focusstackhid,  {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_k,      focusstackhid,  {.i = -1 } },
 	{ MODKEY,                       XK_s,      show,           {0} },
-	{ MODKEY|ShiftMask,             XK_s,      showall,        {0} },
-	{ MODKEY,                       XK_h,      hide,           {0} },
+	{ MODKEY|ControlMask,                       XK_Up,      showall,        {0} },
+	{ MODKEY,                       XK_Down,      hide,           {0} },
 	{ MODKEY,                       XK_i,        incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,        incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_Left,     setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_Right,    setmfact,       {.f = +0.05} },
     { MODKEY,                       XK_Up,       zoom,           {0} }, 
-	{ MODKEY,                       XK_Tab,      view,           {0} },
+	{ AltMask,                       XK_Tab,      view,           {0} },
 	{ MODKEY,                       XK_q,        killclient,     {0} },
 	{ MODKEY,                       XK_F1,       setlayout,      {.v = &layouts[0]} }, // Tile
 	{ MODKEY,                       XK_F2,       setlayout,      {.v = &layouts[1]} }, // Monocle
