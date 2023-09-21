@@ -1,11 +1,6 @@
 # SlnxWM
 Selenux's Custom DWM
 
-# SlnxWM Screenshots
-
-<img width="33%" src="https://github.com/ItzSelenux/ItzSelenux.github.io/blob/main/res/pages/slnxwm/slnxwm1.png">   <img width="33%" src="https://github.com/ItzSelenux/ItzSelenux.github.io/blob/main/res/pages/slnxwm/slnxwm2.png">      <img width="33%" src="https://github.com/ItzSelenux/ItzSelenux.github.io/blob/main/res/pages/slnxwm/slnxwm3.png">
-- NOTE: This is vanilla dwm bar not dwmblocks or polybar.
-
 # Requirements
 
 - imlib2
