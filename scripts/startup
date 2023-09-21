@@ -1,20 +1,26 @@
 #!/bin/sh
 cd ~/
- /lib/mate-polkit/polkit-mate-authentication-agent-1 &
-picom & 
-devmon &
-xrdb merge ~/.Xresources &
-feh --bg-fill ~/.local/share/slnxwm/extra/wallpaper.png &
+xrdb ~/.Xresources &
+#xsetbg ~/.local/share/slnxwm/extra/wallpaper.png &
+hsetroot -solid '#2a2a2a' &
+#picom --legacy-backend
+pipewire &
+sleep 1 &&
+wireplumber &
+sleep 1 &&
+pipewire-pulse &
+#xrandr --output HDMI-1 --mode 1440x900 --rate 75
+
 
 ################## Statusbar
 while true; do
-  # xsetroot -name "墳: $(pamixer --get-volume-human)   : $( date +"%I:%M %p" ) "
+   xsetroot -name "󰕾 : $(pamixer --get-volume-human)   󱑍 : $( date +"%I:%M %p" ) "
 
-#Bar with Nerd Information  
+#Bar with Nerd Information
 
-xsetroot -name "| :  $(pacmd list-sink-inputs | grep -oP '(?<=media.artist = ).*') - $(pacmd list-sink-inputs | grep -oP '(?<=media.title = ).*') | 墳: $(pamixer --get-volume-human) | : $(free -h --kilo | awk '/^Mem:/ {print $3 "/" $2}') | : $( date +"%I:%M %p" ) "
+#xsetroot -name "| 󰝚 :  $(pacmd list-sink-inputs | grep -oP '(?<=media.artist = ).*') - $(pacmd list-sink-inputs | grep -oP '(?<=media.title = ).*') | 󰕾 : $(pamixer --get-volume-human) | 󰍛 : $(free -h --kilo | awk '/^Mem:/ {print $3 "/" $2}') | 󱑍 : $( date +"%I:%M %p" ) "
 
-# "| :  $(pacmd list-sink-inputs | grep -oP '(?<=media.artist = ).*') - $(pacmd list-sink-inputs | grep -oP '(?<=media.title = ).*') | 墳: $(pamixer --get-volume-human) | : $(free -h --kilo | awk '/^Mem:/ {print $3 "/" $2}') |: $(sensors|grep 'Core 0'|awk '{print $3}' ) | : $( date +"%I:%M %p" ) "
+# "| 󰝚 :  $(pacmd list-sink-inputs | grep -oP '(?<=media.artist = ).*') - $(pacmd list-sink-inputs | grep -oP '(?<=media.title = ).*') | 󰕾 : $(pamixer --get-volume-human) | 󰍛 : $(free -h --kilo | awk '/^Mem:/ {print $3 "/" $2}') |󰏈 : $(sensors|grep 'Core 0'|awk '{print $3}' ) | 󱑍 : $( date +"%I:%M %p" ) "
 
    sleep 2    # Update every second
 done &

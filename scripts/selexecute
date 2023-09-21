@@ -2,12 +2,12 @@
 
 cd ~/
 
-if [ -f ".config/selexecute.conf" ]; 
+if [ -f ".config/selexecute.conf" ];
 then
     printf "~/.config/selexecute detected \n"
 else
     printf "WARNING: Config file (~/.config/selexecute.conf) not detected, creating default config file... \n"
-    printf 'e="xed" \n f="nemo" \n l="rofi -show drun"  f="strawberry" \n \n s="flameshot gui" \n t="sakura"\n w="vivaldi-stable"\n' > .config/selexecute.conf
+    printf 'e="xed" \n f="nemo" \n l="rofi -show drun"  \n m="strawberry" \n s="flameshot gui" \n t="sakura"\n w="vivaldi-stable"\n' > .config/selexecute.conf
 fi
 
 source ~/.config/selexecute.conf
@@ -15,7 +15,7 @@ help()
 {
    printf "selexecute is a program that execute some commands according to you ~/.config/selexecute.conf
 
-Options: 
+Options:
     editor
     -e  Open text editor
 
@@ -47,24 +47,24 @@ files()
 $f
 }
 launcher()
-{ 
+{
 $l
 }
 music()
-{ 
+{
 $m
 }
 screenshot()
-{ 
+{
 $s
 }
 terminal()
-{ 
+{
 $t
 }
 web()
-{ 
-$w 
+{
+$w
 }
 
 case "${1}" in
@@ -88,10 +88,10 @@ esac
 
 while getopts ":eflmstwh" option; do
    case $option in
-      e) 
+      e)
          editor
          exit;;
-      f) 
+      f)
          files
          exit;;
       l)

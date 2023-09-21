@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # options to be displyed
-option0=" Logout"
-option1="⏾ Suspend"
-option2=" Reboot"
-option3=" Shutdown"
+option0="󰗽  Logout"
+option1="󰤄  Suspend"
+option2="  Reboot"
+option3="  Shutdown"
 
 # Variable passed to rofi
 options="$option0\n$option1\n$option2\n$option3"
